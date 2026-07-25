@@ -14,11 +14,12 @@ nav {
         padding: 1rem;
 }
 
- Style the navigation menu */
+  /* Style the navigation menu */
 .topnav {
   overflow: hidden;
   background-color: #333;
   position: relative;
+  flex-direction: row-reverse;
 }
 
 /* Hide the links inside the navigation menu (except for logo/home) */
