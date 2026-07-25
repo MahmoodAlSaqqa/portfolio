@@ -3,33 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=\, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="main.css">
     <title>Document</title>
-    <style>
-        nav {
-            display: flex;
-            gap: 1rem;
-            flex-direction: column;
-        }
-        .cards {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-        .cards article {
-            flex-grow: 1;
-            border: 1px solid #ccc;
-            padding: 1rem;
-        }
-    </style>
 </head>
 <body>
-    <header>
-        <h1>We are a team of aspiring web developers with a creative flare and a passion to learn and grow</h1>
-        <nav>
+    <div class="top-nav">
+        <a href="#home" class="active">Logo</a>
+        <div id="myLinks">
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
-        </nav>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+    </div>
+    <header>
+        <h2>MTF developers</h2>
+        <h3>We are a team of aspiring web developers with a creative flare and a passion to learn and grow</h3>
     </header>
         <main>
             <section id="about">
