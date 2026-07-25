@@ -5,5 +5,4 @@ Wireframe [link](https://www.figma.com/design/p4Vyqy9i1uGBgURld6WAvY/Low-fidelit
 
 ### User stories
 
-<img width="1352" height="826" alt="screenshot-2026-07-23_12-30-18" src="https://github.com/user-attachments/assets/de5fb331-fe82-4449-a065-08cde3f0e5aa" />
-
+![user-stories](https://github.com/user-attachments/assets/de5fb331-fe82-4449-a065-08cde3f0e5aa)
