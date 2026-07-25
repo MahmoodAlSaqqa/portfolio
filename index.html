@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        nav {
+            display: flex;
+            gap: 1rem;
+            flex-direction: column;
+        }
+        .cards {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .cards article {
+            flex-grow: 1;
+            border: 1px solid #ccc;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mahmood Saqqa</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+        <main>
+            <section id="about">
+                <h2>About</h2>
+                <p>A paragraph about me</p>
+            </section>
+            <section id="projects">
+                <h2>Projects</h2>
+                <div class="cards">
+                    <article><h3>Project name</h3><p>one-line description</p></article>
+                    <article><h3>Another project</h3><p>one-line description</p></article>
+                </div>
+            </section>
+            <footer id="contact">
+                mahmoodk.saqqa@gmail.com
+            </footer>
+        </main>
+</body>
+</html>
