@@ -2,52 +2,63 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <link rel="stylesheet" href="main.css" />
-    <title>Document</title>
+    <title>Portfolio</title>
   </head>
   <body>
-    <div class="top-nav">
-      <a href="#home" class="active">Logo</a>
-      <h2>MTF developers</h2>
-      <!-- <div id="myLinks">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </div> -->
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <!-- burger menu for nav bar -->
+    <nav class="navbar">
+      <h2 class="logo">MTF developers</h2>
+
+      <button
+        class="burger"
+        id="burger"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+        aria-controls="nav-links"
+      >
         <i class="fa fa-bars"></i>
-      </a>
-    </div>
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#contact">Contacts</a></li>
+      </ul>
+    </nav>
+    <!-- about section -->
     <header>
-      <h3>
-        We are a team of aspiring web developers with a creative flare and a
-        passion to learn and grow
-      </h3>
+      <section id="about">
+        <h3>About</h3>
+        <h4>
+          We are a team of aspiring web developers with a creative flare and a
+          passion to learn and grow
+        </h4>
+      </section>
     </header>
     <main>
-      <section id="about">
-        <h2>About</h2>
-        <p>A paragraph about me</p>
-      </section>
-      <section id="projects">
-        <h2>Projects</h2>
+      <!-- team section -->
+      <section id="team">
+        <h2>Team</h2>
         <div class="cards">
           <article>
-            <h3>Project name</h3>
+            <h3>Team member</h3>
             <p>one-line description</p>
           </article>
           <article>
-            <h3>Another project</h3>
+            <h3>Team member</h3>
             <p>one-line description</p>
           </article>
         </div>
       </section>
+      <!-- contact section -->
       <footer id="contact">mahmoodk.saqqa@gmail.com</footer>
     </main>
+    <script src="main.js"></script>
   </body>
 </html>
