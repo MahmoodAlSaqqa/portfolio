@@ -2,52 +2,88 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <link rel="stylesheet" href="main.css" />
-    <title>Document</title>
+    <title>Portfolio</title>
   </head>
   <body>
-    <div class="top-nav">
-      <a href="#home" class="active">Logo</a>
-      <div id="myLinks">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <!-- burger menu for nav bar -->
+    <nav class="navbar">
+      <h2 class="logo">MTF developers</h2>
+
+      <button
+        class="burger"
+        id="burger"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+        aria-controls="nav-links"
+      >
         <i class="fa fa-bars"></i>
-      </a>
-    </div>
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#contact">Contacts</a></li>
+      </ul>
+    </nav>
+    <!-- about section -->
     <header>
-      <h2>MTF developers</h2>
-      <h3>
-        We are a team of aspiring web developers with a creative flare and a
-        passion to learn and grow
-      </h3>
+      <section id="about">
+        <h3>About</h3>
+        <h4>
+          We are a team of aspiring web developers with a creative flare and a
+          passion to learn and grow
+        </h4>
+        <p>
+          Between the two of us we cover both sides of the build: clean,
+          accessible markup and styling on the front, and the logic that makes
+          it work underneath. Every project is a chance to sharpen our craft, so
+          we treat small builds with the same care as big ones — readable code,
+          thoughtful design, and pages that feel good to use on any screen.
+        </p>
+        <p>
+          We're early in the journey, curious by default, and always shipping
+          something new.
+        </p>
+      </section>
     </header>
     <main>
-      <section id="about">
-        <h2>About</h2>
-        <p>A paragraph about me</p>
-      </section>
-      <section id="projects">
-        <h2>Projects</h2>
+      <!-- team section -->
+      <section id="team">
+        <h3>Team</h3>
         <div class="cards">
           <article>
-            <h3>Project name</h3>
-            <p>one-line description</p>
+            <h4>Amjad</h4>
+            <p>
+              Amjad leans into the look and feel of a page. They enjoy turning a
+              rough sketch into a layout that holds up on a phone as well as a
+              wide screen, and they are the one asking whether the spacing,
+              contrast, and wording actually make sense to a first-time visitor.
+              Currently deep in CSS layout and design systems.
+            </p>
           </article>
           <article>
-            <h3>Another project</h3>
-            <p>one-line description</p>
+            <h4>Mahmoud</h4>
+            <p>
+              Mahmoud gravitates to the moving parts — the JavaScript behind a
+              menu that opens, a form that validates, a page that responds. They
+              like keeping the markup semantic and the code readable enough that
+              future-us can still follow it. Currently digging into the DOM and
+              the fundamentals underneath the frameworks.
+            </p>
           </article>
         </div>
       </section>
-      <footer id="contact">mahmoodk.saqqa@gmail.com</footer>
+      <!-- contact section -->
+      <footer id="contact">
+        "@2026 Amjad and Mahmoud. All rights reserved."
+      </footer>
     </main>
+    <script src="main.js"></script>
   </body>
 </html>
