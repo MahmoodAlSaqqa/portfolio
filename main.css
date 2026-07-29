@@ -1,5 +1,19 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-body);
+  }
+}
 :root {
-  /* Blue */
   --color-blue-light: #edf3f9;
   --color-blue-light-hover: #e4ecf5;
   --color-blue-light-active: #c7d9eb;
@@ -13,7 +27,7 @@
   --color-blue-dark-active: #223b55;
 
   --color-blue-darker: #1a2e43;
-  /* Spacing */
+
   --space-1: 8px;
   --space-2: 16px;
   --space-3: 24px;
@@ -22,57 +36,37 @@
   --space-6: 48px;
   --space-7: 56px;
   --space-8: 64px;
+
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
 }
 
-nav {
-  display: flex;
-  gap: 1rem;
-  flex-direction: column;
-}
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-3);
-}
-
-.card {
-  flex: 1 1 100%; /* mobile: 1-up */
-}
-.cards article {
-  flex-grow: 1;
-  border: 1px solid #ccc;
-  padding: 1rem;
-}
-
-/* ---- navbar ---- */
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   padding: var(--space-2) var(--space-4);
-  background-color: #222831;
   color: #fff;
 }
 
 .logo {
   margin: 0;
+  color: var(--color-blue-darker);
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 700;
 }
 
-/* the burger button: visible by default (mobile-first) */
 .burger {
   display: block;
   background: none;
   border: none;
-  color: #fff;
+  color: var(--color-blue-darker);
   font-size: 1.5rem;
   cursor: pointer;
 }
 
-.navbar {
-  flex-wrap: wrap;
-}
-
-/* nav hidden by default on mobile */
 .nav-links {
   display: none;
   flex-direction: column;
@@ -83,46 +77,118 @@ nav {
   padding: 0;
 }
 
-/* JS adds .open to show it */
 .nav-links.open {
   display: flex;
 }
 
 .nav-links a {
-  color: #fff;
+  color: var(--color-blue-darker);
   text-decoration: none;
   display: block;
-  padding: 1rem 0;
-  border-top: 1px solid #393e46;
+  padding: var(--space-2) 0;
+  border-top: 1px solid var(--color-blue-darker);
 }
 
 .nav-links a:hover {
-  color: #00adb5;
+  color: var(--color-blue-dark-hover);
 }
 
-.active {
-  background-color: #04aa6d;
-  color: white;
+.container {
+  width: 100%;
+  padding: var(--space-6) var(--space-3); /* + 24px left + 24px right */
 }
-/* ---- mobile ---- */
-/* ---- tablet and up ---- */
+
+.main-card {
+  max-width: 950px;
+  width: 100%;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  flex: 1 1 100%;
+  border: 1px solid var(--color-blue-light-active);
+  border-radius: 12px;
+  padding: var(--space-4) var(--space-3);
+  border: 1px solid var(--color-blue-light-active);
+}
+
+.card .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.card .content .img {
+  height: 130px;
+  width: 130px;
+  margin-bottom: var(--space-2);
+}
+
+.card .content .img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.card .content .details .name {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
+  color: var(--color-blue-darker);
+}
+
+.card .content .details .job {
+  font-size: 16px;
+  color: var(--color-blue-normal);
+  margin: 4px 0 0;
+}
+
+.card .content .media-icon {
+  display: flex;
+  gap: var(--space-1);
+  margin-top: var(--space-2);
+}
+
+.card .content .media-icon a {
+  height: 35px;
+  width: 35px;
+  color: var(--color-blue-light);
+  background-color: var(--color-blue-normal);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 35px;
+  font-size: 14px;
+  text-decoration: none;
+  border: 2px solid transparent;
+}
+
+.card .content .media-icon a:hover {
+  background-color: var(--color-blue-dark);
+}
+
+.card .content .media-icon a:active {
+  background-color: var(--color-blue-dark-active);
+}
+.headline {
+  color: var(--color-blue-light-active);
+}
+
 @media (min-width: 768px) {
   .burger {
     display: none;
   }
-  /* tablet: 2-up */
-  @media (min-width: 768px) {
-    .card {
-      flex: 1 1 calc(50% - 12px);
-    }
-  }
 
-  /* desktop: 3-up */
-  @media (min-width: 1024px) {
-    .card {
-      flex: 1 1 calc(33.333% - 16px);
-    }
-  }
   .nav-links {
     display: flex;
     flex-direction: row;
@@ -134,69 +200,51 @@ nav {
     padding: 0;
     border-top: none;
   }
-}
-/* Style the active link (or home/logo) */
-/* Style the active link (or home/logo) */
-.active {
-  background-color: #04aa6d;
-  color: white;
-}
 
-.container {
-  min-height: 100vh;
-  width: 100%;
+  .card {
+    flex: 1 1 calc(50% - 12px);
+  }
+}
+#headline h2 {
+  color: var(--color-blue-dark);
+}
+#about h2 {
+  color: var(--color-blue-darker);
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.card {
-  border: 1px solid var(--color-blue-light-active);
-  border-radius: 12px;
-  padding: var(--space-4) var(--space-3);
-  background-color: var(--color-blue-light-active);
+#tagline {
+  color: var(--color-blue-dark);
+  line-height: 1.6;
 }
-.main-card {
-  max-width: 950px;
-}
-.cards .card .content {
+#team h2 {
+  color: var(--color-blue-darker);
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#foot {
+  color: var(--color-blue-darker);
+  display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
 }
-.cards .card .content .img {
-  height: 130px;
-  width: 130px;
-  margin-bottom: 14px;
+#contacts h2 {
+  color: var(--color-blue-darker);
+  display: flex;
+  justify-content: center;
 }
-.card .content .img img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 50%;
+#contact-list {
+  line-height: 2;
 }
-.card .content .details .name {
-  font-size: 20px;
-  font-weight: 500;
-}
-.card .content .details .job {
-  font-size: 20px;
+#contact-list a {
+  text-decoration: none;
   color: var(--color-blue-normal);
 }
-.card .content .media-icon {
-  display: flex;
-  margin-top: var(--space-2);
-}
-.card .content .media-icon a {
-  height: 35px;
-  width: 35px;
-  color: var(--color-blue-light);
-  background-color: var(--color-blue-normal);
-  margin: 0 4px;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 33px;
-  font-size: 14px;
-  border: 2px solid transparent;
+/* ---- desktop: 3-up ---- */
+@media (min-width: 1024px) {
+  .card {
+    flex: 1 1 calc(33.333% - 16px);
+  }
 }
