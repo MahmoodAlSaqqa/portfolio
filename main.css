@@ -1,86 +1,250 @@
-nav {
-  display: flex;
-  gap: 1rem;
-  flex-direction: column;
-}
-.cards {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-.cards article {
-  flex-grow: 1;
-  border: 1px solid #ccc;
-  padding: 1rem;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-/* ---- navbar ---- */
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-body);
+  }
+}
+:root {
+  --color-blue-light: #edf3f9;
+  --color-blue-light-hover: #e4ecf5;
+  --color-blue-light-active: #c7d9eb;
+
+  --color-blue-normal: #4b83be;
+  --color-blue-normal-hover: #4476ab;
+  --color-blue-normal-active: #3c6998;
+
+  --color-blue-dark: #38628f;
+  --color-blue-dark-hover: #2d4f72;
+  --color-blue-dark-active: #223b55;
+
+  --color-blue-darker: #1a2e43;
+
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 40px;
+  --space-6: 48px;
+  --space-7: 56px;
+  --space-8: 64px;
+
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+}
+
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 2rem;
-  background-color: #222831;
+  flex-wrap: wrap;
+  padding: var(--space-2) var(--space-4);
   color: #fff;
 }
 
 .logo {
   margin: 0;
+  color: var(--color-blue-darker);
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 700;
 }
 
-/* the burger button: hidden on desktop */
 .burger {
-  display: none;
+  display: block;
   background: none;
   border: none;
-  color: #fff;
+  color: var(--color-blue-darker);
   font-size: 1.5rem;
   cursor: pointer;
 }
 
 .nav-links {
-  display: flex;
-  gap: 1.5rem;
+  display: none;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
+.nav-links.open {
+  display: flex;
+}
+
 .nav-links a {
-  color: #fff;
+  color: var(--color-blue-darker);
   text-decoration: none;
+  display: block;
+  padding: var(--space-2) 0;
+  border-top: 1px solid var(--color-blue-darker);
 }
 
 .nav-links a:hover {
-  color: #00adb5;
+  color: var(--color-blue-dark-hover);
 }
 
-/* ---- mobile ---- */
-@media (max-width: 768px) {
-  .navbar {
-    flex-wrap: wrap;
-  }
+.container {
+  width: 100%;
+  padding: var(--space-6) var(--space-3); /* + 24px left + 24px right */
+}
 
+.main-card {
+  max-width: 950px;
+  width: 100%;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  flex: 1 1 100%;
+  border: 1px solid var(--color-blue-light-active);
+  border-radius: 12px;
+  padding: var(--space-4) var(--space-3);
+  border: 1px solid var(--color-blue-light-active);
+}
+
+.card .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.card .content .img {
+  height: 130px;
+  width: 130px;
+  margin-bottom: var(--space-2);
+}
+
+.card .content .img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.card .content .details .name {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
+  color: var(--color-blue-darker);
+}
+
+.card .content .details .job {
+  font-size: 16px;
+  color: var(--color-blue-normal);
+  margin: 4px 0 0;
+}
+
+.card .content .media-icon {
+  display: flex;
+  gap: var(--space-1);
+  margin-top: var(--space-2);
+}
+
+.card .content .media-icon a {
+  height: 35px;
+  width: 35px;
+  color: var(--color-blue-light);
+  background-color: var(--color-blue-normal);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 35px;
+  font-size: 14px;
+  text-decoration: none;
+  border: 2px solid transparent;
+}
+
+.card .content .media-icon a:hover {
+  background-color: var(--color-blue-dark);
+}
+
+.card .content .media-icon a:active {
+  background-color: var(--color-blue-dark-active);
+}
+.headline {
+  color: var(--color-blue-light-active);
+}
+
+@media (min-width: 768px) {
   .burger {
-    display: block;
-  }
-
-  /* hidden by default on mobile */
-  .nav-links {
     display: none;
-    flex-direction: column;
-    gap: 0;
-    width: 100%;
   }
 
-  /* JS adds .open to show it */
-  .nav-links.open {
+  .nav-links {
     display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    width: auto;
   }
 
   .nav-links a {
-    display: block;
-    padding: 1rem 0;
-    border-top: 1px solid #393e46;
+    padding: 0;
+    border-top: none;
+  }
+
+  .card {
+    flex: 1 1 calc(50% - 12px);
+  }
+}
+#headline h2 {
+  color: var(--color-blue-dark);
+}
+#about h2 {
+  color: var(--color-blue-darker);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#tagline {
+  color: var(--color-blue-dark);
+  line-height: 1.6;
+}
+#team h2 {
+  color: var(--color-blue-darker);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#foot {
+  color: var(--color-blue-darker);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#contacts h2 {
+  color: var(--color-blue-darker);
+  display: flex;
+  justify-content: center;
+}
+#contact-list {
+  line-height: 2;
+}
+#contact-list a {
+  text-decoration: none;
+  color: var(--color-blue-normal);
+}
+/* ---- desktop: 3-up ---- */
+@media (min-width: 1024px) {
+  .card {
+    flex: 1 1 calc(33.333% - 16px);
   }
 }
